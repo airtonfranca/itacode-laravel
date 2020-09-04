@@ -43,6 +43,7 @@
           <label>Email</label>
           <input type="text" name="email" class="form-control">
         </div>
+        <input type="submit" value="Salvar" class="btn btn-success">
       </form>
       </>
     </div>

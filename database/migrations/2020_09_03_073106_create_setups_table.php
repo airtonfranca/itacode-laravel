@@ -19,7 +19,6 @@ class CreateSetupsTable extends Migration
             $table->string('endereco');
             $table->string('contato');
             $table->string('email');
-            $table->string('social');
             $table->timestamps();
         });
     }

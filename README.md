@@ -52,6 +52,8 @@ Neste projeto foi trabalhado com:
 
 ### > Categorias:
 
+### - É estritamente obrigatório existir uma categoria chamada "Serviços"
+
 -   Titulo: Serviços
 -   Status: On
 

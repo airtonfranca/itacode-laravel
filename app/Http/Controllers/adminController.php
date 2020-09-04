@@ -18,12 +18,7 @@ class adminController extends Controller
     public function setups()
     {
         $data = DB::table('setups')->first();
-        if (!empty($data)) {
-            $socials = explode(',', $data->social);
-        } else {
-            $socials = [];
-        }
-        return view('backend.insert.setup', ['data' => $data, 'socials' => $socials]);
+        return view('backend.insert.setup', ['data' => $data]);
     }
     public function categorias()
     {
