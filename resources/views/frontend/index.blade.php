@@ -130,17 +130,17 @@
             <div data-0-bottom="opacity:0;left:500px" data-center-center="opacity:1;left:0px">
                 <h3>
                     Cidade/Estado</h3>
-                <p class="heading">
+                <p class="text">
                     {{$setups->endereco}}
                 </p>
                 <br>
                 <h3>Telefone</h3>
-                <p class="heading">
+                <p class="text">
                     {{$setups->contato}}
                 </p>
                 <br>
                 <h3>E-mail</h3>
-                <p class="heading">
+                <p class="text">
                     {{$setups->email}}
                 </p>
             </div>
