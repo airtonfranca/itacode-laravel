@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+a {
+    color: rgb(169, 169, 168);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 300;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #1c1238;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner #fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+}
+.banner .content {
+    position: relative;
+    max-width: 750px;
+    text-align: center;
+}
+.banner .content h2 {
+    color: #fff;
+    font-size: 60px;
+}
+.banner .content p {
+    color: #fff;
+    font-size: 18px;
+}
+.banner header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 10000;
+}
+header nav {
+    float: right;
+    margin-right: -7%;
+}
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li {
+    list-style: none;
+}
+header nav ul li a {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+header nav ul li a:hover {
+    background: rgb(121, 14, 184);
+}
+header .menu {
+    display: none;
+}
+.heading {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.services {
+    background: #073b33;
+    padding: 100px;
+    text-align: center;
+}
+.services .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.services .container .serviceBx {
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 132, 0, 0.26);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0, 132, 0, 0.26);
+    box-shadow: 0px 0px 25px 0px rgba(0, 132, 0, 0.26);
+    border-radius: 7%;
+    position: relative;
+    background: #fff;
+    margin-top: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.services .container .serviceBx img {
+    max-width: 200px;
+}
+.services .container .serviceBx h2 {
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.services .container .serviceBx h3 {
+    font-weight: 650;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.clientes {
+    background: #117667;
+    width: 100%;
+    padding: 100px;
+    padding-top: 300px;
+    margin-top: -300px;
+    text-align: center;
+}
+.clientes .imgBx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.clientes .imgBx img {
+    border-radius: 10%;
+    max-width: 200px;
+    margin: 20px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+.clientes .imgBx img:hover {
+    opacity: 1;
+}
+.clientes .instagram {
+    opacity: 1;
+}
+.clientes .instagram:hover {
+    opacity: 0.7;
+}
+.clientes .instagram a {
+    color: rgb(169, 169, 168);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 300;
+}
+.contato {
+    padding: 100px;
+    background: #162c3b;
+    text-align: center;
+}
+.imgBx2 {
+    background-color: #15669b;
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+}
+.sobre {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+.sobre .contentBx {
+    background: #fc4a1a;
+    padding: 60px;
+    width: 50%;
+}
+.color {
+    background-color: #901515 !important;
+    background-size: cover;
+    background-position: center;
+}
+.color2 {
+    background-color: #a22525 !important;
+    background-size: cover;
+    background-position: center;
+}
+.redesocial {
+    opacity: 1;
+}
+.redesocial:hover {
+    opacity: 0.6;
+}
+.redesocial img {
+    max-width: 30px;
+}
+.redesocial h2 {
+    color: white;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 23px;
+}
+.form .inputBx {
+    margin-bottom: 20px;
+}
+.form .inputBx input {
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    border-bottom: 2px solid #fff;
+}
+.form .inputBx input::placeholder {
+    color: #fff;
+}
+.form .inputBx textarea {
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    min-height: 150px;
+    border-bottom: 2px solid #fff;
+}
+.form .inputBx textarea::placeholder {
+    color: #fff;
+}
+.form .inputBx input[type="submit"] {
+    border-radius: 10px;
+    width: 150px;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    font-weight: 400px;
+}
+.footer {
+    background: #162c3b;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer a {
+    color: #ffffff;
+    text-transform: none;
+    text-decoration: underline;
+}
+.footer img {
+    margin-top: 5px;
+    margin: 5px;
+}
+@media (max-width: 991px) {
+    .banner {
+        padding: 50px;
+    }
+    .banner header {
+        padding: 20px 15px;
+    }
+    .banner .content h2 {
+        font-size: 36px;
+    }
+    .banner .content p {
+        font-size: 16px;
+    }
+    header {
+        padding: 0 10px;
+    }
+    header .menu {
+        display: block;
+        color: #fff;
+        float: right;
+        line-height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    header nav {
+        background: #1f1636;
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        top: 65px;
+        right: -100%;
+        transition: 0.5s;
+    }
+    header nav.active {
+        width: 50%;
+        right: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    .sobre {
+        flex-direction: column;
+    }
+    .sobre .contentBx {
+        width: 100%;
+        padding: 50px;
+        min-height: 400px;
+        text-align: center;
+    }
+    .services {
+        padding: 50px;
+    }
+    .services .container {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .services .container .serviceBx {
+        margin: 20px;
+        width: 250px;
+        height: 250px;
+    }
+    .clientes {
+        margin-top: 0;
+        padding: 50px;
+    }
+    .clientes .imgBx {
+        justify-content: center;
+    }
+    .contato {
+        padding: 50px;
+    }
+    .footer {
+        padding: 20px 50px;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
