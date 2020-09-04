@@ -1,61 +1,94 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## Projeto ITACode - Laravel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<p>Autor:  Airton França</p>
 
-## About Laravel
+<p>O Projeto foi desenvolvido aproveitando os arquivos do Repositório ITACode (projeto criado com HTML5, CSS3 e JavaScript):
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[Repositório ITACode](https://github.com/airtonfranca/itacode)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Neste projeto foi trabalhado com:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **_Frontend (Display)_**
+-   **_Make Models & Migration (Arquivos)_**
+-   **_Config. & Create DataBase_**
+-   **_Create Dashboard_**
+-   **_Backend (Template)_**
+-   **_Controllers_**
+-   **_Routers_**
+-   **_View Blades_**
+-   **_Operation (CRUD)_**
 
-## Learning Laravel
+## Executando o Projeto
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Necessário possuir instalado:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   **_PHP e Banco de Dados Configurados_**
+-   **_Composer_**
 
-## Laravel Sponsors
+1. Clone este repositório em sua máquina.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. Crie um Banco de Dados chamado "itacode" em sua conexão msql.
 
-### Premium Partners
+3. Abre o terminal no diretório raiz do projeto e execute o comando "composer install", para instalar as dependências.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+4. Renomei o arquivo ".env.example" para ".env". Abra o arquivo e verifique se o campo DB_DATABASE corresponde a "itacode", senão altere para o mesmo.
 
-## Contributing
+5. No terminal:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   **_execute o comando "php artisan key:generate" para gerar uma nova chave._**
+-   **_execute o comando "php artisan migrate" paraa configurar todas as tabelas no banco de dadoss_**
+-   **_execute o comando "php artisan serve" para rodar o servidor_**
 
-## Code of Conduct
+### Aplicação estará rodando no endereço: (http://127.0.0.1:8000) , mas inicialmente retornará erro por causa das tabelas do Banco de Dados estarem vazias.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Para preencher as tabelas, acesse o endereço (http://127.0.0.1:8000/admin) e cadastre os item:
 
-## Security Vulnerabilities
+-   **_Categorias_**
+-   **_Configurações do Site_**
+-   **_Serviços_**
+-   **_Portifolio_**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Modelo de Cadastro (se preferir utilizar os dados)
 
-## License
+### > Categorias:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   Titulo: Serviços
+-   Status: On
+
+---
+
+-   Titulo: Portifolio
+-   Status: On
+
+---
+
+-   Titulo: Contato
+-   Status: On
+
+---
+
+### > Configurações do Site:
+
+-   Titulo: Itacode
+-   Cidade/Estado: Manaus/AM
+-   Telefone: (92) 99254-4025
+-   Email: airtonfrance@gmail.com
+
+---
+
+### > Serviços:
+
+-   Titulo: Nossos
+-   Descrição: Ajudamos você empreendedor a divulgar o seu negócio, criamos sua arte de acordo com suas preferências.
+-   Categoria: Serviço
+-   Status: On
+
+### > Portifolio:
+
+-   Titulo: Trabalhos Realizados
+-   Descrição: Cliente que confiaram no nosso trabalho e hoje são referências nem suas respectivas áreas.
+-   Status: On
+
+---
+
+### <> Formulário e Manipulação de Imagens serão atualizados em uma próxima atualização do projeto.

@@ -18,7 +18,6 @@ class CreatePortifoliosTable extends Migration
             $table->string('titulo');
             $table->string('rot');
             $table->string('descricao');
-            $table->string('categoria');
             $table->string('status');
             $table->timestamps();
         });

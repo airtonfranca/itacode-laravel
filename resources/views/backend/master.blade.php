@@ -39,8 +39,7 @@
               <span>Serviços</span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{url('all-posts')}}"><i class="fa fa-circle-o"></i> Ultimas atualizações</a></li>
-              <li><a href="{{url('novo-post')}}"><i class="fa fa-circle-o"></i> Adicionar Novo</a></li>
+              <li><a href="{{url('all-posts')}}"><i class="fa fa-circle-o"></i> Atualizar</a></li>
             </ul>
           </li>
           <li class="treeview">
@@ -49,8 +48,7 @@
               <span>Portifolio</span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{url('all-portifolio')}}"><i class="fa fa-circle-o"></i>Ultimas Atualizações</a></li>
-              <li><a href="{{url('novo-portifolio')}}"><i class="fa fa-circle-o"></i> Adicionar Novo</a></li>
+              <li><a href="{{url('all-portifolio')}}"><i class="fa fa-circle-o"></i>Atualizar</a></li>
             </ul>
           </li>
           <li><a href="{{asset('categorias')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Categorias</span></a></li>

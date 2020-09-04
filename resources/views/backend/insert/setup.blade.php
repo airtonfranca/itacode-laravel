@@ -43,21 +43,6 @@
           <label>Email</label>
           <input type="text" name="email" class="form-control">
         </div>
-        <div class="form-group">
-          <label>Redes Sociais (link) </label>
-        </div>
-        <div class="socialGroup">
-          <div class="form-group socialField">
-            <input type="text" name="social[]" class="form-control">
-            <a href="#" class="btn btn-warning addField">
-              <i class="fa fa-plus"></i>
-            </a>
-          </div>
-        </div>
-        <div class="alert alert-danger" id="socialError">
-          <strong>Desculpa! </strong> Você atingiu o máximo de campos para Redes Sociais
-        </div>
-        <input type="submit" value="Atualizar" class="btn btn-success">
       </form>
       </>
     </div>
@@ -81,19 +66,6 @@
           <label>Email</label>
           <input type="text" name="email" value="{{$data->email}}" class="form-control">
         </div>
-        <div class="form-group">
-          <label>Redes Sociais (link) </label>
-        </div>
-        <div class="socialGroup">
-          @foreach($socials as $social)
-          <div class="form-group socialField">
-            <input type="text" name="social[]" value="{{$social}}" class=" form-control">
-          </div>
-          @endforeach
-        </div>
-        <div class="alert alert-danger" id="socialError">
-          <strong>Desculpa! </strong> Você atingiu o máximo de campos para Redes Sociais
-        </div>
         <input type="submit" value="Atualizar" class="btn btn-success">
       </form>
       </>
@@ -106,18 +78,6 @@
     var image = document.getElementById('output');
     image.src = URL.createObjectURL(event.target.files[0]);
   };
-
-  fieldCount = 1;
-  $('.addField').click(function() {
-    fieldCount++;
-    if (fieldCount <= 4) {
-      var newField = $(document.createElement('div')).attr('class', 'form-group');
-      newField.after().html('<label>Redes Sociais (links) </label><input type="text" name="social[]" class="form-control"></div>');
-      newField.appendTo('.socialField');
-    } else {
-      $('#socialError').show();
-    }
-  })
 </script>
 <style>
   .socialField {
