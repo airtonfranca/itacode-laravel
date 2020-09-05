@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\setup;
+use App\categoria;
+use App\content;
+use App\portifolio;
+use App\visit;
+use Exception;
 
 class frontController extends Controller
 {
@@ -13,22 +19,16 @@ class frontController extends Controller
 
     public function index()
     {
-        $setups = DB::table('setups')->first();
-        if (!empty($data)) {
-            $socials = explode(',', $data->social);
-        } else {
-            $socials = [];
-        }
-        $cats = DB::table('categorias')->where('status', 'on')->get();
+        $setups = setup::all()->first();
+        $cats = categoria::where('status', 'on')->get();
+        $visita = visit::orderBy('num', 'desc')->first();
+        $servico = content::where('categoria', 'servicos')->first();
+        $servico->rot = categoria::where('titulo', 'Serviços')->value('rot');
 
-        $servico = DB::table('contents')->where('categoria', 'servicos')->first();
-        $servico->rot = DB::table('categorias')->where('titulo', 'Serviços')->value('rot');
-        $visita = DB::table('visits')->orderBy('num', 'desc')->first();
         $portifolio = DB::table('portifolios')->first();
 
         return view('frontend.index', [
             'setups' => $setups,
-            'socials' => $socials,
             'cats' => $cats,
             'servico' => $servico,
             'visita' => $visita,
