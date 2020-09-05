@@ -32,11 +32,18 @@
 
         <img id="fundo" src="{{asset('img/fundo.png')}}">
         <div class="content" data-0-top="opacity:0;left:100px" data-200-top="opacity:1;left:0px">
+            @if(Session::has('message'))
+            <div class="content">
+                <div class="alert alert-success">
+                    {{ session::get('message') }}
+                    <a class="close" data-dismiss="alert"></a>
+                </div>
+            </div>
+            @endif
             <a href=" #" class="logo">
                 <img src="{{asset('img/logoicon.png')}}" width="120px">
             </a>
             <h2>Designer e Artes</h2>
-
         </div>
     </div>
     </section>
@@ -157,6 +164,7 @@
                     © 2020 ITACode | Desenvolvido por <strong><a href="https://github.com/airtonfranca" target="_blank">
                             Airton França</a></strong>
                 </p>
+                <p class="text">Você é o visitante de nº: {{$visita->num}}</p>
             </div>
         </div>
     </section>

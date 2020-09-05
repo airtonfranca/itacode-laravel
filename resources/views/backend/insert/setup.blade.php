@@ -22,56 +22,8 @@
     </div>
     @endif
 
-    @if($data == '')
-    <div class="col-sm-6">
-      <form method="post" action="{{url('addConfg')}}" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <input type="hidden" name="tbl" value="{{encrypt('setups')}}">
-        <div class="form-group">
-          <label>Título do Site</label>
-          <input type="text" name="meta_titulo" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Cidade/Estado</label>
-          <input type="text" name="endereco" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Telefone</label>
-          <input type="text" name="contato" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="text" name="email" class="form-control">
-        </div>
-        <input type="submit" value="Salvar" class="btn btn-success">
-      </form>
-      </>
-    </div>
-    @else<div class="col-sm-6">
-      <form method="post" action="{{url('addConfg')}}" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <input type="hidden" name="tbl" value="{{encrypt('setups')}}">
-        <div class="form-group">
-          <label>Título do Site</label>
-          <input type="text" name="meta_titulo" value="{{$data->meta_titulo}}" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Cidade/Estado</label>
-          <input type="text" name="endereco" value="{{$data->endereco}}" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Telefone</label>
-          <input type="text" name="contato" value="{{$data->contato}}" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="text" name="email" value="{{$data->email}}" class="form-control">
-        </div>
-        <input type="submit" value="Atualizar" class="btn btn-success">
-      </form>
-      </>
-    </div>
-    @endif
+    @include('backend.form.setup')
+
 </section>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">

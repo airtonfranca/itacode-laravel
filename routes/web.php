@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'frontController@index');
+Route::get('/', 'frontController@index')->middleware('visita');
 
 Route::get('admin', 'adminController@admin');
 

@@ -23,7 +23,7 @@ class frontController extends Controller
 
         $servico = DB::table('contents')->where('categoria', 'servicos')->first();
         $servico->rot = DB::table('categorias')->where('titulo', 'Serviços')->value('rot');
-
+        $visita = DB::table('visits')->orderBy('num', 'desc')->first();
         $portifolio = DB::table('portifolios')->first();
 
         return view('frontend.index', [
@@ -31,6 +31,7 @@ class frontController extends Controller
             'socials' => $socials,
             'cats' => $cats,
             'servico' => $servico,
+            'visita' => $visita,
             'portifolio' => $portifolio
         ]);
     }

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\setup;
+use App\categoria;
+use App\content;
+use App\portifolio;
+use Exception;
 
 class adminController extends Controller
 {
@@ -13,71 +18,136 @@ class adminController extends Controller
 
     public function admin()
     {
-        return view('backend.index');
+        try {
+            return view('backend.index');
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function setups()
     {
-        $data = DB::table('setups')->first();
-        return view('backend.insert.setup', ['data' => $data]);
+        try {
+            $data = setup::all()->first();
+            return view('backend.insert.setup', ['data' => $data]);
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function categorias()
     {
-        $data = DB::table('categorias')->get();
-        return view('backend.insert.categoria', ['data' => $data]);
+        try {
+            $data = categoria::all();
+            return view('backend.insert.categoria', ['data' => $data]);
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function deletarCategoria($id)
     {
-        $data = DB::table('categorias')->where('cid', $id)->delete();
-        return redirect()->back()->with('message', 'Dados removidos com sucesso');
+        try {
+            $data = categoria::where('cid', $id)->delete();
+            return redirect()->back()->with('message', 'Dados removidos com sucesso');
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function editarCategoria($id)
     {
-        $data = DB::table('categorias')->get();
-        $maindata = DB::table('categorias')->where('cid', $id)->first();
-        if ($maindata) {
-            return view('backend.edit.categoria', ['data' => $data, 'maindata' => $maindata]);
-        } else {
-            return redirect('categorias');
+        try {
+            $data = categoria::all();
+            $maindata = categoria::where('cid', $id)->first();
+            if ($maindata) {
+                return view('backend.insert.categoria', ['data' => $data, 'maindata' => $maindata]);
+            } else {
+                return redirect('categorias');
+            }
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
         }
     }
     public function novoPost()
     {
-        $cats = DB::table('categorias')->where('status', 'on')->get();
-        return view('backend.insert.novopost', ['cats' => $cats]);
+        try {
+            $cats = categoria::all();
+            return view('backend.insert.novopost', ['cats' => $cats]);
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function allPosts()
     {
-        $data = DB::table('contents')->get();
-        return view('backend.display.posts', ['data' => $data]);
+        try {
+            $data = content::all();
+            return view('backend.display.posts', ['data' => $data]);
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function editPost($id)
     {
-        $cats = DB::table('categorias')->where('status', 'on')->get();
-        $data = DB::table('contents')->where('contid', $id)->first();
-        return view('backend.edit.editpost', ['data' => $data, 'cats' => $cats]);
+        try {
+            $cats = categoria::where('status', 'on');
+            $data = content::where('contid', $id)->first();
+            return view('backend.insert.novopost', ['data' => $data, 'cats' => $cats]);
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function deletarPost($id)
     {
-        $data = DB::table('contents')->where('contid', $id)->delete();
-        return redirect()->back()->with('message', 'Dados removidos com sucesso');
+        try {
+            $data = content::where('contid', $id)->delete();
+            return redirect()->back()->with('message', 'Dados removidos com sucesso');
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function novoPortifolio()
     {
-        return view('backend.insert.novoPortifolio');
+        try {
+            return view('backend.insert.novoPortifolio');
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function allPortifolio()
     {
-        $data = DB::table('portifolios')->get();
-        return view('backend.display.portifolio', ['data' => $data]);
+        try {
+            $data = portifolio::all();
+            return view('backend.display.portifolio', ['data' => $data]);
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function editPortifolio($id)
     {
-        $data = DB::table('portifolios')->where('pid', $id)->first();
-        return view('backend.edit.editportifolio', ['data' => $data]);
+        try {
+            $data = portifolio::where('pid', $id)->first();
+            return view('backend.insert.novoPortifolio', ['data' => $data]);
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
     public function deletarPortifolio($id)
     {
-        $data = DB::table('portifolios')->where('pid', $id)->delete();
-        return redirect()->back()->with('message', 'Dados removidos com sucesso');
+        try {
+            $data = portifolio::where('pid', $id)->delete();
+            return redirect()->back()->with('message', 'Dados removidos com sucesso');
+        } catch (Exception $e) {
+            return redirect('/')->withInput()->with('message', "Não foi possível resolver a solicitação. Erro(s):" .
+                $e->getMessage());
+        }
     }
 }

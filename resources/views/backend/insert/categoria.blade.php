@@ -14,30 +14,15 @@
   <div class="row">
     @if(Session::has('message'))
     <div class="col-sm-12">
-      <div class="alert alert-success">
+      <div class="alert alert-info">
         {{ session::get('message') }}
-        <a class="close" data-dismiss="alert">X</a>
+        <a class="close" data-dismiss="alert">x</a>
       </div>
     </div>
     @endif
-    <div class="col-sm-6">
-      <form method="post" action="{{url('addCategoria')}}">
-        {{ csrf_field() }}
-        <input type="hidden" name="tbl" value="{{encrypt('categorias')}}">
-        <div class="form-group">
-          <label>Título</label>
-          <input type="text" name="titulo" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Status</label>
-          <select name="status" class="form-control">
-            <option>On</option>
-            <option>Off</option>
-          </select>
-        </div>
-        <input type="submit" value="Adicionar Categoria" class="btn btn-success">
-      </form>
-    </div>
+
+    @include('backend.form.categoria')
+
     <div class="col-sm-6">
       <p><strong>Ver todas categorias</strong></p>
       <table class="table table-striped table-hover table-bordered">

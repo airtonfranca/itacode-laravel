@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class portifolio extends Model
 {
-    protected $table = 'portifolio';
+    protected $table = 'portifolios';
     protected $primaryKey = 'pid';
 }
